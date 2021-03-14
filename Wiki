@@ -1,0 +1,25 @@
+The commands below are supposed to be executed in the directory containing Dockerfile and script.sql
+
+Build docker image named "mehdi/mysqldb" using Dockerfile
+# docker build -t mehdi/mysqldb .
+
+Run a container named "mehdi_db" in a detached mode and bind the host port 3305 to the container port 3306 using the image above
+# docker run -d --name mehdi_db -p 3305:3306 mehdi/mysqldb
+
+Access the container interactive terminal
+# docker exec -it mehdi_db /bin/bash
+
+Connect to mysql
+# mysql -uadmin -padmin_pwd
+
+List MySQL databases
+# show databases;
+
+Use the target database
+# use my_db;
+
+List tables
+# show tables;
+
+Execute MySQL statements
+# SELECT * FROM users;
